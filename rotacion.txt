@@ -1,0 +1,45 @@
+<canvas id="myCanvas" width="800" height="800"></canvas>
+<script>
+var letra_r = [4,16,4,46,8,46,8,32,12,32,17,39,20,46,24,46,21,38,19,34,17,31,21,27,21,21,16,16,14,19,17,22,18,26,15,29,8,29,8,19,14,19,16,16];
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+
+
+polygon(letra_r,'yellow','red');
+vt = centroGeom(letra_r);
+ctx.translate(-vt[0],-vt[1])
+rotate(letra_r);
+ctx.translate(vt[0],vt[1])
+
+function polygon(cd,colorBorde,colorRelleno,grosor)
+{
+ctx.beginPath();
+ctx.strokeStyle=colorBorde;
+ctx.fillStyle= colorRelleno;
+ctx.lineWidth=grosor;
+ctx.moveTo(cd[0],cd[1]);
+for (var i = 2; i < cd.length; i+=2)
+    ctx.lineTo(cd[i],cd[i+1]);
+ctx.closePath();
+ctx.stroke();
+ctx.fill();
+}
+function centroGeom(coordenada){
+  for (var i = 2; i < coordenada.length; i+=2){
+    var a=[i];
+    var b=[i+1];
+  }
+}
+
+  tr = [ , ]
+  return tr;
+}
+
+function rotate(x)
+{
+ ctx.save();
+ ctx.rotate(-5/12*Math.PI );  
+ polygon(x,'yellow','red');
+}
+
+</script>
