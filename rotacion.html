@@ -25,13 +25,23 @@ ctx.stroke();
 ctx.fill();
 }
 function centroGeom(coordenada){
-  for (var i = 2; i < coordenada.length; i+=2){
-    var a=[i];
-    var b=[i+1];
-  }
-}
+tr = [0,0]
+vx=coordenada[0],vex=coordenada[0]
+vy=coordenada[1],vey=coordenada[1]
 
-  tr = [ , ]
+  for (var i = 2; i < coordenada.length; i+=2){
+       if(vx>coordenada[i])
+          vx = coordenada[i];
+       if(vex<coordenada[i]){
+          vex = coordenada[i];}
+       if(vy>coordenada[i])
+          vy = coordenada[i];
+       if(vey<coordenada[i])
+          vey = coordenada[i];
+  }
+x=(vx+vex)/2;
+y=-(vy+vey);
+  tr = [x , y]
   return tr;
 }
 
